@@ -14,12 +14,34 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let myName = "Aleksandr"
-        print("В моём имени \(myName.characters.count) букв")
+        
+        countNameCharacters(name: "Misha")
+        sufixFind(name: "Геннадиевич")
         
         
     }
-
-  
+    
+    
+    
+    func countNameCharacters (name: String){
+    let myName = name
+    print("В данном имени \(myName.characters.count) букв")
 }
+    
+    func sufixFind (name: String){
+        let otchestvo = name
+        let sufix1 = "ич"
+        let sufix2 = "на"
+        if otchestvo.hasSuffix(sufix1){
+            print("В отчестве \(name) присутствует суфикс \(sufix1)")
+        } else {
+            if otchestvo.hasSuffix(sufix2){
+                print("В отчестве \(name) присутствует суфикс \(sufix2)")
+            } else {
+                print("В отчестве \(name) нет таких суфиксов")
+            }
+        }
+        
+    }
 
+}
