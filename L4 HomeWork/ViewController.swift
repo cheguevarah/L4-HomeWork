@@ -15,10 +15,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        countNameCharacters(name: "Misha")
-        sufixFind(name: "Геннадиевич")
-        separateName(name: "AleksandrKhazin")
-        mirrorString(inputText: "Ось")
+//        countNameCharacters(name: "Misha")
+//        sufixFind(name: "Геннадиевич")
+//        separateName(name: "AleksandrKhazin")
+//        mirrorString(inputText: "Ось")
+        comaAdd(inputNumber: "1234567")
         
         
         
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
         
     }
     
-    func separateName (name: String) {
+    func separateName (name: String){
         let holeName = name
         let firstHalf = holeName[holeName.startIndex..<holeName.index(holeName.startIndex, offsetBy: 9)]
         print(firstHalf)
@@ -58,7 +59,7 @@ class ViewController: UIViewController {
         
     }
     
-    func mirrorString (inputText: String) {
+    func mirrorString (inputText: String){
         var textToTransf = inputText
         var reversed = ""
         for i in textToTransf.characters {
@@ -68,8 +69,36 @@ class ViewController: UIViewController {
         
     }
     
+    func comaAdd (inputNumber: String){
+        var number = inputNumber
+        if number.count < 3 {
+            print(number)
+        } else {
+        if number.count == 4 {
+            number.insert(",", at: number.index(number.startIndex, offsetBy: 1))
+            print(number)
+        } else {
+            if number.count == 5 {
+                number.insert(",", at: number.index(number.startIndex, offsetBy: 2))
+                print(number)
+            } else {
+                if number.count == 6 {
+                    number.insert(",", at: number.index(number.startIndex, offsetBy: 3))
+                    print(number)
+                } else {
+                    if number.count == 7 {
+                        number.insert(",", at: number.index(number.startIndex, offsetBy: 1))
+                        number.insert(",", at: number.index(number.startIndex, offsetBy: 4))
+                        print(number)
+                }
+            }
+        }
+    }
+}
+}
     
     
+  
     
     
 }
