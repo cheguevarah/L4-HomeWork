@@ -18,12 +18,14 @@ class ViewController: UIViewController {
         countNameCharacters(name: "Misha")
         sufixFind(name: "Геннадиевич")
         separateName(name: "AleksandrKhazin")
+        mirrorString(inputText: "Ось")
+        
         
         
     }
     
     
-    
+
     func countNameCharacters (name: String){
     let myName = name
     print("В имени \(name) - \(myName.count) букв")
@@ -53,6 +55,16 @@ class ViewController: UIViewController {
         print(secondHalf)
         let fullName = firstHalf + " " + secondHalf
         print(fullName)
+        
+    }
+    
+    func mirrorString (inputText: String) {
+        var textToTransf = inputText
+        var reversed = ""
+        for i in textToTransf.characters {
+            reversed = String(i) + reversed
+        }
+        print(reversed)
         
     }
     
