@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 //        checkPass("1aA_")
 //        massiveSort([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
         writeTranslite("ЯЗЬ")
+//        searchForChars(["lada", "sedan", "baklazhan"], "da")
         
         
         
@@ -162,12 +163,26 @@ class ViewController: UIViewController {
         var textToTrans = inputWord
         let transAlphabet = ["Я" : "YA", "З" : "Z", "Ь" : "'", "С" : "S", "О" : "O", "Б" : "B", "А" : "A", "К" : "K"]
         for (key, value) in transAlphabet {
-            if textToTrans.contains(key) {
             textToTrans = textToTrans.replacingOccurrences(of: key, with: value)
             }
+        print(textToTrans)
         }
-    }
+    
+    
+//    Задача 9. Сделать выборку из массива строк в которых содержится указанная строка
+//
+//    [“lada”, “sedan”, “baklazhan”] search “da”
+//
+//    → [“lada”, “sedan”] - sort() && sort using NSPredicate + manual (for loop)
+    
+    func searchForChars (_ inputMassive: [String], _ inputChars: String){
+        var holeMass = inputMassive
+        let searchFor = inputChars
+        var resultMass = [String].init()
+        var deleted: String = ""
         
+    }
+    
         
         
 
