@@ -14,12 +14,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+//
+//        countNameCharacters("Misha")
+//        sufixFind("Геннадиевич")
+//        separateName("AleksandrKhazin")
+//        mirrorString("Ось")
+//        comaAdd("1234567")
+        checkPass("aas*)@SS12dasda")
+//        massiveSort([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
         
-//        countNameCharacters(name: "Misha")
-//        sufixFind(name: "Геннадиевич")
-//        separateName(name: "AleksandrKhazin")
-//        mirrorString(inputText: "Ось")
-        comaAdd(inputNumber: "1234567")
+        
+        
         
         
         
@@ -27,12 +32,12 @@ class ViewController: UIViewController {
     
     
 
-    func countNameCharacters (name: String){
+    func countNameCharacters (_ name: String){
     let myName = name
     print("В имени \(name) - \(myName.count) букв")
 }
     
-    func sufixFind (name: String){
+    func sufixFind (_ name: String = ""){
         let otchestvo = name
         let sufix1 = "ич"
         let sufix2 = "на"
@@ -48,7 +53,7 @@ class ViewController: UIViewController {
         
     }
     
-    func separateName (name: String){
+    func separateName (_ name: String = ""){
         let holeName = name
         let firstHalf = holeName[holeName.startIndex..<holeName.index(holeName.startIndex, offsetBy: 9)]
         print(firstHalf)
@@ -59,7 +64,7 @@ class ViewController: UIViewController {
         
     }
     
-    func mirrorString (inputText: String){
+    func mirrorString (_ inputText: String = ""){
         var textToTransf = inputText
         var reversed = ""
         for i in textToTransf.characters {
@@ -69,7 +74,7 @@ class ViewController: UIViewController {
         
     }
     
-    func comaAdd (inputNumber: String){
+    func comaAdd (_ inputNumber: String = ""){
         var number = inputNumber
         if number.count < 3 {
             print(number)
@@ -97,8 +102,69 @@ class ViewController: UIViewController {
 }
 }
     
+    func checkPass (_ password: String = ""){
+        let pass = password
+        var starsOfSecure = 0
+        var levelOfSecure: String = ""
+        let specialCharacter: CharacterSet = CharacterSet.init(charactersIn: "!@#$%^&*)(_")
+        let specSymb: Bool = pass.rangeOfCharacter(from: specialCharacter) != nil
+        for i in pass {
+            if i >= "A" && i <= "Z"{
+                starsOfSecure += 1
+                levelOfSecure.append("b)")
+                break
+            }
+        }
+        for i in pass {
+            if i >= "a" && i <= "z"{
+                starsOfSecure += 1
+                levelOfSecure.append("c)")
+                break
+            }
+        }
+        for i in pass {
+            if i >= "0" && i <= "9"{
+                starsOfSecure += 1
+                levelOfSecure.append("a)")
+                break
+            }
+        }
+        
+        if specSymb {
+            starsOfSecure += 1
+            levelOfSecure.append("d)")
+        }
+        
+        if starsOfSecure == 4 {
+            starsOfSecure += 1
+        }
+        
+        
+        print("Уровень безопасноти пароля равен: \(starsOfSecure), содержит варианты: \(levelOfSecure)")
+    }
     
-  
     
+//    ([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
     
+    func massiveSort (_ inputToSort: [Int]){
+        var massive = inputToSort
+        var deleted = 0
+        for i in massive{
+            if massive[i] > massive[i+1]{
+               deleted = massive.remove(at: i)
+               massive.append(deleted)
+                print(massive)
+            }
+        }
+}
+
+
+
+
+
+
+
+
+
+
 }
