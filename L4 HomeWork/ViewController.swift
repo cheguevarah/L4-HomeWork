@@ -14,16 +14,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//
-//        countNameCharacters("Misha")
-//        sufixFind("Геннадиевич")
-//        separateName("AleksandrKhazin")
-//        mirrorString("Ось")
-//        comaAdd("1234567")
-//        checkPass("1aA_")
-//        massiveSort([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
+
+        countNameCharacters("Misha")
+        
+        sufixFind("Геннадиевич")
+        
+        separateName("AleksandrKhazin")
+        
+        mirrorString("Ось")
+        
+        comaAdd("1234567")
+        
+        checkPass("1aA_")
+        
+        massiveSort([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
+        
         writeTranslite("ЯЗЬ")
-//        searchForChars(["lada", "sedan", "baklazhan"], "da")
+        
+        searchForChars(["lada", "sedan", "baklazhan"], "ba")
         
         
         
@@ -33,12 +41,14 @@ class ViewController: UIViewController {
     }
     
     
-
+//    Создать строку с своим именем, вывести количество символов содержащихся в ней.
     func countNameCharacters (_ name: String){
     let myName = name
     print("В имени \(name) - \(myName.count) букв")
 }
     
+    
+//    Создать строку с своим отчеством проверить его на окончание “ич/на”
     func sufixFind (_ name: String = ""){
         let otchestvo = name
         let sufix1 = "ич"
@@ -55,6 +65,9 @@ class ViewController: UIViewController {
         
     }
     
+    
+//    Cоздать строку, где слитно написано Ваши ИмяФамилия “IvanVasilevich"
+//    Вам нужно разбить на две отдельных строки из предыдущей создать третью, где они обе будут разделены пробелом
     func separateName (_ name: String = ""){
         let holeName = name
         let firstHalf = holeName[holeName.startIndex..<holeName.index(holeName.startIndex, offsetBy: 9)]
@@ -66,6 +79,8 @@ class ViewController: UIViewController {
         
     }
     
+    
+//    Вывести строку зеркально Ось → ьсО не используя reverse (посимвольно)
     func mirrorString (_ inputText: String = ""){
         var textToTransf = inputText
         var reversed = ""
@@ -76,6 +91,8 @@ class ViewController: UIViewController {
         
     }
     
+    
+//    Добавить запятые в строку как их расставляет калькулятор
     func comaAdd (_ inputNumber: String = ""){
         var number = inputNumber
         if number.count < 3 {
@@ -104,6 +121,8 @@ class ViewController: UIViewController {
 }
 }
     
+    
+//    Проверить пароль на надежность от 1 до 5
     func checkPass (_ password: String = ""){
         let pass = password
         var starsOfSecure = 0
@@ -145,8 +164,8 @@ class ViewController: UIViewController {
         print("Уровень безопасноти пароля равен: \(starsOfSecure), содержит варианты: \(levelOfSecure)")
     }
     
-//    ([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
     
+//  НЕ СДЕЛАЛ Сортировка массива ([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
     func massiveSort (_ inputToSort: [Int]){
         var massive = inputToSort
         var deleted = 0
@@ -159,7 +178,9 @@ class ViewController: UIViewController {
         }
 }
     
-    func writeTranslite (_ inputWord: String = "") {
+    
+//    Написать метод, который будет переводить строку в транслит.
+    func writeTranslite (_ inputWord: String = ""){
         var textToTrans = inputWord
         let transAlphabet = ["Я" : "YA", "З" : "Z", "Ь" : "'", "С" : "S", "О" : "O", "Б" : "B", "А" : "A", "К" : "K"]
         for (key, value) in transAlphabet {
@@ -170,16 +191,17 @@ class ViewController: UIViewController {
     
     
 //    Задача 9. Сделать выборку из массива строк в которых содержится указанная строка
-//
-//    [“lada”, “sedan”, “baklazhan”] search “da”
-//
-//    → [“lada”, “sedan”] - sort() && sort using NSPredicate + manual (for loop)
-    
+    // By Loop:
     func searchForChars (_ inputMassive: [String], _ inputChars: String){
-        var holeMass = inputMassive
+        let holeMass = inputMassive
         let searchFor = inputChars
         var resultMass = [String].init()
-        var deleted: String = ""
+        for i in holeMass{
+            if i.contains(searchFor){
+                resultMass += [i]
+            }
+        }
+        print(resultMass)
         
     }
     
