@@ -20,8 +20,9 @@ class ViewController: UIViewController {
 //        separateName("AleksandrKhazin")
 //        mirrorString("Ось")
 //        comaAdd("1234567")
-        checkPass("aas*)@SS12dasda")
+//        checkPass("1aA_")
 //        massiveSort([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
+        writeTranslite("ЯЗЬ")
         
         
         
@@ -143,7 +144,6 @@ class ViewController: UIViewController {
         print("Уровень безопасноти пароля равен: \(starsOfSecure), содержит варианты: \(levelOfSecure)")
     }
     
-    
 //    ([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
     
     func massiveSort (_ inputToSort: [Int]){
@@ -157,6 +157,20 @@ class ViewController: UIViewController {
             }
         }
 }
+    
+    func writeTranslite (_ inputWord: String = "") {
+        var textToTrans = inputWord
+        let transAlphabet = ["Я" : "YA", "З" : "Z", "Ь" : "'", "С" : "S", "О" : "O", "Б" : "B", "А" : "A", "К" : "K"]
+        for (key, value) in transAlphabet {
+            if textToTrans.contains(key) {
+            textToTrans = textToTrans.replacingOccurrences(of: key, with: value)
+            }
+        }
+    }
+        
+        
+        
+
 
 
 
