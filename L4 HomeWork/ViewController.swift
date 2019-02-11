@@ -27,13 +27,13 @@ class ViewController: UIViewController {
 //
 //        checkPass("1aA_")
 //
-//        massiveSort([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
+        massiveSort([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
 //
 //        writeTranslite("ЯЗЬ")
 //
 //        searchForChars(["lada", "sedan", "baklazhan"], "ba")
         
-        antiMat("fuck you bitch")
+//        antiMat("fuck you bitch")
         
 
         
@@ -174,15 +174,11 @@ class ViewController: UIViewController {
 //  НЕ СДЕЛАЛ Сортировка массива ([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
     func massiveSort (_ inputToSort: [Int]){
         var massive = inputToSort
-        var deleted = 0
-        for i in massive{
-            if massive[i] > massive[i+1]{
-               deleted = massive.remove(at: i)
-               massive.append(deleted)
-                print(massive)
-            }
+        let unique = Array(Set(massive))
+        let sortedSet = Array(Set(unique))
+        let result = sortedSet.sorted()
+        print(result)
         }
-}
     
     
 //    Написать метод, который будет переводить строку в транслит.
@@ -223,6 +219,7 @@ class ViewController: UIViewController {
     }
         print(textToCheck)
     }
+    
     
     
     
