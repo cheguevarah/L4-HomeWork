@@ -14,24 +14,30 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+//
+//        countNameCharacters("Misha")
+//
+//        sufixFind("Геннадиевич")
+//
+//        separateName("AleksandrKhazin")
+//
+//        mirrorString("Ось")
+//
+//        comaAdd("1234567")
+//
+//        checkPass("1aA_")
+//
+//        massiveSort([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
+//
+//        writeTranslite("ЯЗЬ")
+//
+//        searchForChars(["lada", "sedan", "baklazhan"], "ba")
+        
+        antiMat("fuck you bitch")
+        
 
-        countNameCharacters("Misha")
         
-        sufixFind("Геннадиевич")
         
-        separateName("AleksandrKhazin")
-        
-        mirrorString("Ось")
-        
-        comaAdd("1234567")
-        
-        checkPass("1aA_")
-        
-        massiveSort([0, 9, 6, 2, 2, 0, 1, 5, 4, 3, 7, 5, 4, 5, 2, 1, 10, 4, 5, 0])
-        
-        writeTranslite("ЯЗЬ")
-        
-        searchForChars(["lada", "sedan", "baklazhan"], "ba")
         
         
         
@@ -205,8 +211,29 @@ class ViewController: UIViewController {
         
     }
     
+    
+//   использовать Set или NSSet для программы antimat - исключить из предложения все слова содержащиеся в сете
+    func antiMat (_ inputText: String){
+        var textToCheck = inputText
+        let badWords: Set = ["fuck", "bitch", "asshole"]
+        for i in badWords{
+            if textToCheck.contains(i) {
+               textToCheck = textToCheck.replacingOccurrences(of: i, with: "***")
+            }
+    }
+        print(textToCheck)
+    }
+    
+    
+    
+    
+    
+    
         
         
+
+
+
 
 
 
